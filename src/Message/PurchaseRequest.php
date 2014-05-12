@@ -14,7 +14,7 @@ class PurchaseRequest extends AbstractRequest
         $this->validate('amount', 'currency', 'description');
 
         $data = array();
-        $data['account_id'] = $this->getAccountId();
+        $data['account_id'] = $this->getAccountId() ?: null;
         $data['button'] = array();
         $data['button']['name'] = $this->getDescription();
         $data['button']['price_string'] = $this->getAmount();

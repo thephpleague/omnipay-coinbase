@@ -44,6 +44,16 @@ class PurchaseRequestTest extends TestCase
         $this->assertSame('https://example.com/notify', $data['button']['callback_url']);
     }
 
+    public function testGetDataAccountIdNull()
+    {
+        // empty string must be converted to null
+        $this->request->setAccountId('');
+
+        $data = $this->request->getData();
+        $this->assertNull($data['account_id']);
+
+    }
+
     public function testSendSuccess()
     {
         $this->setMockHttpResponse('PurchaseSuccess.txt');
