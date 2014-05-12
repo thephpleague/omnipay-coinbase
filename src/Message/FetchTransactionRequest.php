@@ -2,8 +2,6 @@
 
 namespace Omnipay\Coinbase\Message;
 
-use Omnipay\Common\Exception\InvalidRequestException;
-
 /**
  * Coinbase Fetch Transaction Request
  *

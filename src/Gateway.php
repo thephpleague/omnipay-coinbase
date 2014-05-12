@@ -56,7 +56,7 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @param array $parameters
+     * @param  array                                     $parameters
      * @return \Omnipay\Coinbase\Message\PurchaseRequest
      */
     public function purchase(array $parameters = array())
@@ -65,7 +65,7 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @param array $parameters
+     * @param  array                                             $parameters
      * @return \Omnipay\Coinbase\Message\CompletePurchaseRequest
      */
     public function completePurchase(array $parameters = array())
@@ -74,7 +74,7 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @param array $parameters
+     * @param  array                                             $parameters
      * @return \Omnipay\Coinbase\Message\FetchTransactionRequest
      */
     public function fetchTransaction(array $parameters = array())
