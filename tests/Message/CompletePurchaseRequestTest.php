@@ -10,6 +10,12 @@ class CompletePurchaseRequestTest extends TestCase
     {
         $this->httpRequest = $this->getHttpRequest();
         $this->request = new CompletePurchaseRequest($this->getHttpClient(), $this->httpRequest);
+        $this->request->initialize(
+            array(
+                'apiKey' => 'abc123',
+                'secret' => 'shhh',
+            )
+        );
     }
 
     public function testGetDataGet()

@@ -14,6 +14,8 @@ class PurchaseRequestTest extends TestCase
                 'amount' => '10.00',
                 'currency' => 'USD',
                 'description' => 'Socks',
+                'apiKey' => 'abc123',
+                'secret' => 'shhh',
             )
         );
     }

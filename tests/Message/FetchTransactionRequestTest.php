@@ -11,7 +11,11 @@ class FetchTransactionRequestTest extends TestCase
         $this->httpRequest = $this->getHttpRequest();
         $this->request = new FetchTransactionRequest($this->getHttpClient(), $this->httpRequest);
         $this->request->initialize(
-            array('transactionReference' => '9XMWP4YG')
+            array(
+                'transactionReference' => '9XMWP4YG',
+                'apiKey' => 'abc123',
+                'secret' => 'shhh',
+            )
         );
     }
 
