@@ -13,9 +13,16 @@ class CompletePurchaseRequest extends FetchTransactionRequest
 {
     public function getData()
     {
-        // check both GET and POST
-        $order = $this->httpRequest->request->get('order') ?:
-            $this->httpRequest->query->get('order');
+        // check GET
+        $order = $this->httpRequest->query->get('order');
+
+        // check JSON POST data
+        if (!$order && $this->httpRequest->getContent()) {
+            $content = json_decode($this->httpRequest->getContent(), true);
+            if (isset($content['order'])) {
+                $order = $content['order'];
+            }
+        }
 
         if (empty($order['id'])) {
             throw new InvalidRequestException('Missing Order ID');
