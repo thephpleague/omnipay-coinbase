@@ -67,7 +67,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     public function generateNonce()
     {
-        return (int) round(microtime(true) * 1000000);
+        return sprintf('%0.0f', round(microtime(true) * 1000000));
     }
 
     public function generateSignature($url, $body, $nonce)
