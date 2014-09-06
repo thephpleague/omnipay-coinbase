@@ -2,7 +2,7 @@
 
 **Coinbase driver for the Omnipay PHP payment processing library**
 
-[![Build Status](https://travis-ci.org/omnipay/coinbase.png?branch=master)](https://travis-ci.org/omnipay/coinbase)
+[![Build Status](https://travis-ci.org/thephpleague/omnipay-coinbase.png?branch=master)](https://travis-ci.org/thephpleague/omnipay-coinbase)
 [![Latest Stable Version](https://poser.pugx.org/omnipay/coinbase/version.png)](https://packagist.org/packages/omnipay/coinbase)
 [![Total Downloads](https://poser.pugx.org/omnipay/coinbase/d/total.png)](https://packagist.org/packages/omnipay/coinbase)
 
