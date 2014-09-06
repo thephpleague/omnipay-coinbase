@@ -10,7 +10,7 @@
         "pay",
         "payment"
     ],
-    "homepage": "https://github.com/omnipay/coinbase",
+    "homepage": "https://github.com/thephpleague/omnipay-coinbase",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
         },
         {
             "name": "Omnipay Contributors",
-            "homepage": "https://github.com/omnipay/coinbase/contributors"
+            "homepage": "https://github.com/thephpleague/omnipay-coinbase/contributors"
         }
     ],
     "autoload": {
