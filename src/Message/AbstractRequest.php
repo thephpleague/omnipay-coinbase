@@ -9,7 +9,7 @@ namespace Omnipay\Coinbase\Message;
  */
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-    protected $endpoint = 'https://coinbase.com/api/v1';
+    protected $endpoint = 'https://api.coinbase.com/v1';
 
     public function getApiKey()
     {
