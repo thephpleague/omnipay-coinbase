@@ -9,7 +9,7 @@ namespace Omnipay\Coinbase\Message;
  */
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-    protected $endpoint = 'https://coinbase.com/api/v1';
+    protected $endpoint = 'https://api.coinbase.com/v1';
 
     public function getApiKey()
     {
@@ -58,6 +58,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $body = $data ? http_build_query($data) : null;
 
         $httpRequest = $this->httpClient->createRequest($method, $url, null, $body);
+        $httpRequest->setHeader('Content-Type', 'application/x-www-form-urlencoded');
         $httpRequest->setHeader('ACCESS_KEY', $this->getApiKey());
         $httpRequest->setHeader('ACCESS_SIGNATURE', $this->generateSignature($url, $body, $nonce));
         $httpRequest->setHeader('ACCESS_NONCE', $nonce);
