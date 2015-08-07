@@ -9,13 +9,15 @@ class PurchaseResponseTest extends TestCase
     public function testSuccess()
     {
         $httpResponse = $this->getMockHttpResponse('PurchaseSuccess.txt');
-        $response = new PurchaseResponse($this->getMockRequest(), $httpResponse->json());
+        $request = $this->getMockRequest();
+        $request->shouldReceive('getTestMode')->once()->andReturn(false);
+        $response = new PurchaseResponse($request, $httpResponse->json());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertTrue($response->isRedirect());
         $this->assertNull($response->getMessage());
         $this->assertSame('GET', $response->getRedirectMethod());
-        $this->assertSame('https://coinbase.com/checkouts/30dae91b81299066ba126e3858f89fd8', $response->getRedirectUrl());
+        $this->assertSame('https://api.coinbase.com/v2/checkouts/30dae91b81299066ba126e3858f89fd8', $response->getRedirectUrl());
         $this->assertNull($response->getRedirectData());
         $this->assertSame('30dae91b81299066ba126e3858f89fd8', $response->getTransactionReference());
     }

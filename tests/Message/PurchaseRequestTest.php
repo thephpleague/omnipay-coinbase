@@ -63,7 +63,7 @@ class PurchaseRequestTest extends TestCase
         $this->assertTrue($response->isRedirect());
         $this->assertNull($response->getMessage());
         $this->assertSame('GET', $response->getRedirectMethod());
-        $this->assertSame('https://coinbase.com/checkouts/30dae91b81299066ba126e3858f89fd8', $response->getRedirectUrl());
+        $this->assertSame('https://api.coinbase.com/v2/checkouts/30dae91b81299066ba126e3858f89fd8', $response->getRedirectUrl());
         $this->assertNull($response->getRedirectData());
         $this->assertSame('30dae91b81299066ba126e3858f89fd8', $response->getTransactionReference());
     }
